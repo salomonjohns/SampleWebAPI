@@ -33,9 +33,12 @@ jobs:
                 ls
                 cd SampleWebAPI/bin
                 ls
+                cd ..
+                cd obj\Release\
+                ls
             
-            - name: Upload artifact
-              uses: actions/upload-artifact@v3
-              with:
-                name: SampleWebAPI
-                path: "./SampleWebAPI/bin" 
+            #- name: Upload artifact
+            #  uses: actions/upload-artifact@v3
+            #  with:
+            #    name: SampleWebAPI
+            #    path: "./SampleWebAPI/bin" 
