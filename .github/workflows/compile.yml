@@ -28,3 +28,10 @@ jobs:
             - name: Build Solution
               run: |
                 msbuild.exe SampleWebAPI.sln /nologo /nr:false /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+
+            - uses: fixpoint/azblob-upload-artifact@v4
+              if: failure()
+              with:
+                connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
+                name: SampleWebAPI
+                path: "./_build"
