@@ -1,4 +1,4 @@
-name: Terraform Destroy (Manual)
+name: Terraform Build Infra
 
 on: workflow_dispatch
 
