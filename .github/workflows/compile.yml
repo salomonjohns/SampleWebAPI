@@ -31,6 +31,8 @@ jobs:
                 pwd
                 msbuild.exe SampleWebAPI.sln /nologo /nr:false /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
                 ls
+                cd SampleWebAPI
+                ls
             
             - name: Upload artifact
               uses: actions/upload-artifact@v3
