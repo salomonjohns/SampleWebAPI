@@ -4,6 +4,7 @@ on: [push]
 
 jobs:
     build:
+        # Do not upgrade to latest, 2022 will not compile natively.
         runs-on: windows-2019
         steps:
             - name: Checkout
