@@ -29,16 +29,8 @@ jobs:
               run: |
                 msbuild.exe SampleWebAPI.sln /nologo /nr:false /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
             
-            - name: Login to Azure
-              uses: azure/login@v1
+            - name: Upload artifact
+              uses: upload-artifact@v3
               with:
-                creds: '{"clientId":"${{ secrets.AZURE_CLIENT_ID }}","clientSecret":"${{ secrets.AZURE_CLIENT_SECRET }}","subscriptionId":"${{ secrets.AZURE_SUBSCRIPTION_ID }}","tenantId":"${{ secrets.AZURE_TENANT_ID }}"}'
-
-            - name: Upload to Azure Storage
-            - uses: fixpoint/azblob-upload-artifact@v4
-              # Uncomment if you want it to upload if it fails
-              # if: failure()
-              with:
-                connection-string: ${{ secrets.AZURE_STORAGE_CONNECTION_STRING }}
                 name: SampleWebAPI
-                path: "./_build"
+                path: "./_build" 
