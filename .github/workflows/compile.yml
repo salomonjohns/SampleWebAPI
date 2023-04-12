@@ -35,4 +35,4 @@ jobs:
               uses: actions/upload-artifact@v3
               with:
                 name: SampleWebAPI
-                path: "./_build" 
+                path: "../_build" 
