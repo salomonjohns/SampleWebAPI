@@ -31,11 +31,11 @@ jobs:
                 pwd
                 msbuild.exe SampleWebAPI.sln /nologo /nr:false /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
                 ls
-                cd bin
+                cd SampleWebAPI/bin
                 ls
             
             - name: Upload artifact
               uses: actions/upload-artifact@v3
               with:
                 name: SampleWebAPI
-                path: "./bin" 
+                path: "./SampleWebAPI/bin" 
