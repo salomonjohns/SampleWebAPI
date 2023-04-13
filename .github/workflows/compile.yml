@@ -19,15 +19,15 @@ jobs:
             - name: Navigate to Workspace
               run: cd $GITHUB_WORKSPACE
 
-            - name: Create Build Directory
-              run: mkdir _build
+            #- name: Create Build Directory
+            #  run: mkdir _build
               
             - name: Restore Packages
               run: nuget restore SampleWebAPI.sln
               
             - name: Build Solution
               run: |
-                msbuild.exe SampleWebAPI.sln /nologo /nr:false /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="../_build"
+                msbuild.exe SampleWebAPI.sln /nologo /nr:false /p:WebPublishMethod=FileSystem /p:DeleteExistingFiles=True /p:platform="Any CPU" /p:configuration="Release" /p:PublishUrl="bin"
                 cd SampleWebAPI/bin
                 ls
                 cd ..
