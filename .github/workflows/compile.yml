@@ -57,7 +57,7 @@ jobs:
             #    name: SampleWebAPI
             #    path: "./SampleWebAPI/bin" 
             
-    terraform_apply:
+    Infrastructure:
       needs: build
       runs-on: ubuntu-latest
       steps: 
