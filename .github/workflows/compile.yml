@@ -38,6 +38,7 @@ jobs:
                 cd ..
                 ls
                 Compress-Archive .\obj\ release.zip
+                pwd
                 ls
                 
             - name: Upload to Storage
@@ -45,7 +46,7 @@ jobs:
               with:
                 connection_string: ${{ secrets.AzureBlobConnectionString }}
                 container_name: q2salomon
-                source_folder: release.zip
+                source_folder: SampleWebAPI\release.zip
                 # If the file exists remove it
                 delete_if_exists: true
 
