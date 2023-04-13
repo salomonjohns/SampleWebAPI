@@ -33,6 +33,21 @@ jobs:
                 cd ..
                 cd obj\Release\
                 ls
+                cd ..
+                cd ..
+                ls
+                Compress-Archive .\obj\ release.zip
+                ls
+                
+            - name: Upload to Storage
+              uses: LanceMcCarthy/Action-AzureBlobUpload@v2
+              with:
+                connection_string: ${{ secrets.AzureBlobConnectionString }}
+                container_name: q2salomon
+                source_folder: release.zip
+                # If the file exists remove it
+                delete_if_exists: true
+
             
             #- name: Upload artifact
             #  uses: actions/upload-artifact@v3
