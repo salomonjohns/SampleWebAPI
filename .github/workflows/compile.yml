@@ -37,7 +37,7 @@ jobs:
                 cd ..
                 cd ..
                 ls
-                Compress-Archive .\obj\ release.zip
+                Compress-Archive .\bin\ release.zip
                 pwd
                 ls
                 
