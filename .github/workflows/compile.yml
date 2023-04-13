@@ -31,6 +31,7 @@ jobs:
                 cd SampleWebAPI/bin
                 ls
                 cd ..
+                ls
                 cd obj\Release\
                 ls
                 cd ..
