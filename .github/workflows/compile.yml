@@ -40,7 +40,13 @@ jobs:
                 Compress-Archive .\bin\ release.zip
                 pwd
                 ls
-                
+             
+            - name: Upload artifact dbg
+              uses: actions/upload-artifact@v3
+              with:
+                name: SampleWebAPI
+                path: "./" 
+            
             - name: Upload to Storage
               uses: LanceMcCarthy/Action-AzureBlobUpload@v2
               with:
@@ -51,11 +57,7 @@ jobs:
                 delete_if_exists: true
 
             
-            #- name: Upload artifact
-            #  uses: actions/upload-artifact@v3
-            #  with:
-            #    name: SampleWebAPI
-            #    path: "./SampleWebAPI/bin" 
+
             
     Infrastructure:
       needs: build
