@@ -40,17 +40,17 @@ variable "vm_size" {
 
 variable "image_publisher" {
   description = "Name of the publisher of the image (az vm image list)"
-  default     = "RedHat"
+  default     = "MicrosoftWindowsServer"
 }
 
 variable "image_offer" {
   description = "Name of the offer (az vm image list)"
-  default     = "RHEL"
+  default     = "WindowsServer"
 }
 
 variable "image_sku" {
   description = "Image SKU to apply (az vm image list)"
-  default     = "7.3"
+  default     = "2019-datacenter-gensecond"
 }
 
 variable "image_version" {
@@ -65,5 +65,5 @@ variable "admin_username" {
 
 variable "admin_password" {
   description = "Administrator password"
-  default     = "Q2password!@Q2"
+  default     = "Q2$al0mon!@Q2"
 }
